@@ -20,6 +20,7 @@ public class PageEntry implements Comparable<PageEntry> {
     public int getCount() {
         return count;
     }
+
     public String toString() {
         return pdfName + " " + page + " " + count;
     }
@@ -30,10 +31,12 @@ public class PageEntry implements Comparable<PageEntry> {
 
     @Override
     public int compareTo(PageEntry o) {
-        if (getCount() > o.getCount())
+        if (getCount() > o.getCount()) {
             return -1;
-        if (getCount() < o.getCount())
+        }
+        if (getCount() < o.getCount()) {
             return 1;
+        }
         return 0;
     }
 

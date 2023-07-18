@@ -14,8 +14,7 @@ public class Main {
         // отвечать на запросы /{word} -> возвращённое значение метода search(word) в JSON-формате
         try (ServerSocket serverSocket = new ServerSocket(8989);) {
             while (true) {
-                try (
-                        Socket socket = serverSocket.accept();
+                try (Socket socket = serverSocket.accept();
                         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                         PrintWriter out = new PrintWriter(socket.getOutputStream());
                 ) {

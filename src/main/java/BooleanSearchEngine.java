@@ -64,15 +64,16 @@ public class BooleanSearchEngine implements SearchEngine {
 
     //поиск с учетом стоп-листа
     public List<PageEntry> searchWithStopWords(String query) {
-        String [] words = query.split(" ");
-        if (words.length <= 1)
+        String[] words = query.split(" ");
+        if (words.length <= 1) {
             return search(query);
-        else {
+        } else {
             List<PageEntry> result = new ArrayList<>();
             for (String word : words) {
                 // Проверка, есть ли слово в стоп-листе
-                if (stopWords.contains(word))
+                if (stopWords.contains(word)) {
                     continue;
+                }
 
                 if (result.isEmpty()) {
                     result.addAll(search(word));
